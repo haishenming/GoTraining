@@ -28,6 +28,14 @@ func splitPizzas(people int, pizzas int, pieces int) (int, int) {
 	return piecesForPeople, leftover
 }
 
+func addS(num int) string {
+	if num>1 {
+		return "pisces"
+	}else {
+		return "pisce"
+	}
+}
+
 func main() {
 	fmt.Printf("How many people? ")
 	fmt.Scanf("%d", &people)
@@ -40,5 +48,6 @@ func main() {
 
 	piecesForPeople, leftover := splitPizzas(people, pizzas, pieces)
 
-	fmt.Printf("Each person gets %d pieces of pizza.\nThere are %d leftover pieces.", piecesForPeople, leftover)
+	fmt.Printf("Each person gets %d %s of pizza.\nThere are %d leftover %s.",
+		piecesForPeople, addS(piecesForPeople), leftover, addS(leftover))
 }
