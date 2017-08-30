@@ -42,6 +42,7 @@ func main() {
 
 	fmt.Printf("The subtotal is $%.2f.", amount)
 
+	// 美分取整
 	addAmount := math.Ceil(amount*0.055*100.0) / 100.0
 
 	if state == "WI" {
